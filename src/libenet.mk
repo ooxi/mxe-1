@@ -12,9 +12,8 @@ $(PKG)_URL      := $($(PKG)_GITHUB)/archive/$($(PKG)_VERSION).tar.gz
 $(PKG)_DEPS     := gcc
 
 define $(PKG)_UPDATE
-    $(WGET) -q -O- '$(libepoxy_GITHUB)/releases' | \
-    $(SED) -n 's,.*/archive/v\([0-9.]*\)\.tar.*,\1,p' | \
-    head -1
+    echo 'TODO: write update script for $(PKG).' >&2;
+    echo $($(PKG)_VERSION)
 endef
 
 define $(PKG)_BUILD
