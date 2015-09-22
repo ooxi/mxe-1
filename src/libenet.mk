@@ -17,8 +17,13 @@ define $(PKG)_UPDATE
 endef
 
 define $(PKG)_BUILD
-    cd '$(1)' && autoreconf -fi -I'$(PREFIX)/$(TARGET)/share/aclocal'
-    cd '$(1)' && ./configure \
-        $(MXE_CONFIGURE_OPTS)
-    $(MAKE) -C '$(1)' -j '$(JOBS)' install $(MXE_DISABLE_CRUFT)
+
+    # configure
+    mkdir '$(1).build'
+    cd '$(1).build' && cmake \
+      -DCMAKE_TOOLCHAIN_FILE='$(CMAKE_TOOLCHAIN_FILE)' \
+      '$(1)'
+
+    # build
+    $(MAKE) -C '$(1).build' -j '$(JOBS)'
 endef
