@@ -1,7 +1,7 @@
 # This file is part of MXE.
 # See index.html for further information.
 
-PKG             := libenet
+PKG             := enet
 $(PKG)_IGNORE   :=
 $(PKG)_VERSION  := 5f476546edabdf37509cd3448d1a616f5eca535d
 $(PKG)_CHECKSUM := 865c43c3777a216fff241e8f0098555ebed2f019
