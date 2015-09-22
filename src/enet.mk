@@ -26,4 +26,8 @@ define $(PKG)_BUILD
 
     # build
     $(MAKE) -C '$(1).build' -j '$(JOBS)'
+
+    # install include files
+    $(INSTALL) -d '$(1)/include/enet' '$(PREFIX)/$(TARGET)/include/enet'
+
 endef
