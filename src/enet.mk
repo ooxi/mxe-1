@@ -41,6 +41,6 @@ define $(PKG)_BUILD
     $(INSTALL) -D '$(1)/include/enet/win32.h'     '$(PREFIX)/$(TARGET)/include/enet/win32.h'
 
     # Install library
-    $(INSTALL) -D '$(1)/lib/libenet.a'            '$(PREFIX)/$(TARGET)/lib/libenet.a'
+    $(INSTALL) -D '$(1).build/libenet.a'            '$(PREFIX)/$(TARGET)/lib/libenet.a'
 
 endef
