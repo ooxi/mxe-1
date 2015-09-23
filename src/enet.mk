@@ -28,6 +28,14 @@ define $(PKG)_BUILD
     $(MAKE) -C '$(1).build' -j '$(JOBS)'
 
     # install include files
-    $(INSTALL) -d '$(1)/include/enet' '$(PREFIX)/$(TARGET)/include/enet'
+    $(INSTALL) -D '$(1)/include/enet/callbacks.h' '$(PREFIX)/$(TARGET)/include/enet/callbacks.h'
+    $(INSTALL) -D '$(1)/include/enet/enet.h'      '$(PREFIX)/$(TARGET)/include/enet/enet.h'
+    $(INSTALL) -D '$(1)/include/enet/list.h'      '$(PREFIX)/$(TARGET)/include/enet/list.h'
+    $(INSTALL) -D '$(1)/include/enet/protocol.h'  '$(PREFIX)/$(TARGET)/include/enet/protocol.h'
+    $(INSTALL) -D '$(1)/include/enet/time.h'      '$(PREFIX)/$(TARGET)/include/enet/time.h'
+    $(INSTALL) -D '$(1)/include/enet/types.h'     '$(PREFIX)/$(TARGET)/include/enet/types.h'
+    $(INSTALL) -D '$(1)/include/enet/unix.h'      '$(PREFIX)/$(TARGET)/include/enet/unix.h'
+    $(INSTALL) -D '$(1)/include/enet/utility.h'   '$(PREFIX)/$(TARGET)/include/enet/utility.h'
+    $(INSTALL) -D '$(1)/include/enet/win32.h'     '$(PREFIX)/$(TARGET)/include/enet/win32.h'
 
 endef
