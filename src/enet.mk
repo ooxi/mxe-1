@@ -18,16 +18,18 @@ endef
 
 define $(PKG)_BUILD
 
-    # configure
+    # Configure
     mkdir '$(1).build'
     cd '$(1).build' && cmake \
       -DCMAKE_TOOLCHAIN_FILE='$(CMAKE_TOOLCHAIN_FILE)' \
       '$(1)'
 
-    # build
+
+    # Build
     $(MAKE) -C '$(1).build' -j '$(JOBS)'
 
-    # install include files
+
+    # Install include files
     $(INSTALL) -D '$(1)/include/enet/callbacks.h' '$(PREFIX)/$(TARGET)/include/enet/callbacks.h'
     $(INSTALL) -D '$(1)/include/enet/enet.h'      '$(PREFIX)/$(TARGET)/include/enet/enet.h'
     $(INSTALL) -D '$(1)/include/enet/list.h'      '$(PREFIX)/$(TARGET)/include/enet/list.h'
@@ -37,5 +39,8 @@ define $(PKG)_BUILD
     $(INSTALL) -D '$(1)/include/enet/unix.h'      '$(PREFIX)/$(TARGET)/include/enet/unix.h'
     $(INSTALL) -D '$(1)/include/enet/utility.h'   '$(PREFIX)/$(TARGET)/include/enet/utility.h'
     $(INSTALL) -D '$(1)/include/enet/win32.h'     '$(PREFIX)/$(TARGET)/include/enet/win32.h'
+
+    # Install library
+    $(INSTALL) -D '$(1)/lib/libenet.a'            '$(PREFIX)/$(TARGET)/lib/libenet.a'
 
 endef
