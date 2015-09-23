@@ -9,6 +9,10 @@
 
 int main(int argc, char** argv)
 {
+    // Suppress unused warnings, __attribute__((unused)) doesn't seam to work
+    (void)argc;
+    (void)argv;
+
     if (enet_initialize() != 0)
     {
         fprintf(stderr, "An error occurred while initializing ENet.\n");
