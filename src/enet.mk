@@ -43,4 +43,11 @@ define $(PKG)_BUILD
     # Install library
     $(INSTALL) -D '$(1).build/libenet.a'            '$(PREFIX)/$(TARGET)/lib/libenet.a'
 
+
+    # Build test executable
+    '$(TARGET)-gcc' \
+        -W -Wall -Werror -ansi -pedantic \
+        '$(2).c' -o '$(PREFIX)/$(TARGET)/bin/test-enet.exe' \
+        -lenet -lws2_32
+
 endef
