@@ -9,7 +9,8 @@
 
 int main(int argc, char** argv)
 {
-    // Suppress unused warnings, __attribute__((unused)) doesn't seam to work
+    /* Suppress unused warnings, __attribute__((unused)) doesn't seam to work
+     */
     (void)argc;
     (void)argv;
 
