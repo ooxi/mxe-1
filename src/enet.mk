@@ -45,9 +45,9 @@ define $(PKG)_BUILD
 
 
     # Build test executable
-    '$(TARGET)-gcc' \
+    echo '$(TARGET)-gcc' \
         -W -Wall -Werror -ansi -pedantic \
         '$(2).c' -o '$(PREFIX)/$(TARGET)/bin/test-enet.exe' \
-        -lenet -lws2_32
+        -lenet -lws2_32 > /tmp/abc.txt
 
 endef
