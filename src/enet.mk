@@ -48,7 +48,6 @@ define $(PKG)_BUILD
     '$(TARGET)-gcc' \
         -W -Wall -Werror -ansi -pedantic \
         '$(2).c' -o '$(PREFIX)/$(TARGET)/bin/test-enet.exe' \
-        `'$(TARGET)-pkg-config' enet --cflags --libs`
-#        -lenet -lws2_32 -lwinmm
+        -lenet -lws2_32 -lwinmm
 
 endef
