@@ -14,6 +14,9 @@ $(PKG)_DEPS     := gcc
 
 define $(PKG)_BUILD
 
+    echo 'add_definitions(-DENET_DLL)' >> '$(1)/CMakeLists.txt'
+
+
     # Configure
     mkdir '$(1).build'
     cd '$(1).build' && cmake \
@@ -22,7 +25,7 @@ define $(PKG)_BUILD
 
 
     # Build
-    $(MAKE) -C '$(1).build' -j '$(JOBS)' $(if $(BUILD_STATIC), , -DENET_DLL)
+    $(MAKE) -C '$(1).build' -j '$(JOBS)'
 
 
     # Install include files
