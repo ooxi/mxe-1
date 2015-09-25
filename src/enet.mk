@@ -79,7 +79,7 @@ define $(PKG)_BUILD_SHARED
     $(INSTALL) -D '$(1)/include/enet/win32.h'     '$(PREFIX)/$(TARGET)/include/enet/win32.h'
 
     # Install library
-    $(INSTALL) -D '$(1).build/libenet.dll'        '$(PREFIX)/$(TARGET)/lib/libenet.dll'
+    $(INSTALL) -D '$(1).build/libenet.dll'        '$(PREFIX)/$(TARGET)/bin/libenet.dll'
     $(INSTALL) -D '$(1).build/libenet.dll.a'      '$(PREFIX)/$(TARGET)/lib/libenet.dll.a'
 
 
