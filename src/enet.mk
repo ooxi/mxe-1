@@ -7,7 +7,7 @@ $(PKG)_VERSION  := 5f476546edabdf37509cd3448d1a616f5eca535d
 $(PKG)_CHECKSUM := 1c49f074d611b3e00c79abd94cb1df8f1b4bb013ebd20e0d03015ddac955ff16
 $(PKG)_SUBDIR   := $(PKG)-$($(PKG)_VERSION)
 $(PKG)_FILE     := $($(PKG)_SUBDIR).tar.gz
-$(PKG)_GITHUB   := https://github.com//lsalzman/enet
+$(PKG)_GITHUB   := https://github.com/lsalzman/enet
 $(PKG)_URL      := $($(PKG)_GITHUB)/archive/$($(PKG)_VERSION).tar.gz
 $(PKG)_DEPS     := gcc
 
