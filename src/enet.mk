@@ -17,7 +17,7 @@ define $(PKG)_BUILD
     # Configure
     mkdir '$(1).build'
     cd '$(1).build' && cmake \
-      $(if $(BUILD_STATIC), "", "-DENET_DLL")
+      $(if $(BUILD_STATIC), "", "-DENET_DLL") \
       -DCMAKE_TOOLCHAIN_FILE='$(CMAKE_TOOLCHAIN_FILE)' \
       '$(1)'
 
