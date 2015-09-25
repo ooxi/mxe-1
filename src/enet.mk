@@ -37,7 +37,7 @@ define $(PKG)_BUILD_STATIC
     $(INSTALL) -D '$(1)/include/enet/win32.h'     '$(PREFIX)/$(TARGET)/include/enet/win32.h'
 
     # Install library
-    $(INSTALL) -D '$(1).build/libenet.a'            '$(PREFIX)/$(TARGET)/lib/libenet.a'
+    $(INSTALL) -D '$(1).build/libenet.a'          '$(PREFIX)/$(TARGET)/lib/libenet.a'
 
 
     # Build test executable
@@ -51,7 +51,10 @@ endef
 
 define $(PKG)_BUILD_SHARED
 
-    echo 'abc' > /tmp/xyz
+    # Enable shared build
+    $(SED) -i 's/STATIC/SHARED/'                       '$(1)/CMakeLists.txt'
+    echo 'target_link_libraries(enet ws2_32 winmm)' >> '$(1)/CMakeLists.txt' 
+
 
     # Configure
     mkdir '$(1).build'
@@ -76,7 +79,7 @@ define $(PKG)_BUILD_SHARED
     $(INSTALL) -D '$(1)/include/enet/win32.h'     '$(PREFIX)/$(TARGET)/include/enet/win32.h'
 
     # Install library
-    $(INSTALL) -D '$(1).build/libenet.a'            '$(PREFIX)/$(TARGET)/lib/libenet.a'
+    $(INSTALL) -D '$(1).build/libenet.a'          '$(PREFIX)/$(TARGET)/lib/libenet.a'
 
 
     # Build test executable
