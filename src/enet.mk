@@ -83,11 +83,12 @@ define $(PKG)_BUILD_SHARED
     $(INSTALL) -D '$(1).build/libenet.dll.a'      '$(PREFIX)/$(TARGET)/lib/libenet.dll.a'
 
 
-    # Build test executable
+    # Build test executable (linking to ws2_32 and winmm not necessary since the
+    # shared library is already linked)
     '$(TARGET)-gcc' \
         -W -Wall -Werror -ansi -pedantic \
         '$(2).c' -o '$(PREFIX)/$(TARGET)/bin/test-enet.exe' \
-        -lenet -lws2_32 -lwinmm
+        -lenet
 
 endef
 
