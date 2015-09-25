@@ -11,10 +11,6 @@ $(PKG)_GITHUB   := https://github.com/lsalzman/enet
 $(PKG)_URL      := $($(PKG)_GITHUB)/archive/$($(PKG)_VERSION).tar.gz
 $(PKG)_DEPS     := gcc
 
-define $(PKG)_UPDATE
-    echo 'TODO: write update script for $(PKG).' >&2;
-    echo $($(PKG)_VERSION)
-endef
 
 define $(PKG)_BUILD
 
